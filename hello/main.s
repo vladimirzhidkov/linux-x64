@@ -1,11 +1,11 @@
-.global _start
+        .global main
 
-.data
+        .data
 msg:    .ascii "hello!!!\n"
 msg_length = . - msg
 
-.text
-_start:
+        .text
+main:
         # write(stdout, msg, msg_length)
         mov     $1,             %rdi        # file descriptor (stdout = 1)
         mov     $msg,           %rsi        # string address

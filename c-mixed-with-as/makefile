@@ -1,7 +1,7 @@
 #-*- Makefile -*-
 
 EXEC := a.out
-OBJS := main.o exit.o write.o 
+OBJS := main.o _print.o
 
 default: build run
 build: $(EXEC)
@@ -15,6 +15,6 @@ run:
 	./$(EXEC)
 
 $(EXEC): $(OBJS) 
-	ld -e main -o $(EXEC) $(OBJS)
+	gcc -o $(EXEC) $(OBJS)
 %.o: %.[s|c]
-	as -g -o $@ -c $<
+	gcc -g -o $@ -c $<

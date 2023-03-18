@@ -10,6 +10,6 @@ Input:
     rdx - string length
  */
 _write:
-    mov     $1, %rax
-    syscall
+    mov     $1, %rax        # __x64_sys_write
+    syscall                 # call kernel (64bit interruption)
     ret
