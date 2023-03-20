@@ -15,6 +15,6 @@ run:
 	./$(EXEC)
 
 $(EXEC): $(OBJS) 
-	gcc -o $(EXEC) $(OBJS)
+	gcc -v -o $(EXEC) $(OBJS)
 %.o: %.[s|c]
 	gcc -g -o $@ -c $<
